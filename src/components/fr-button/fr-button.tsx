@@ -2,7 +2,7 @@ import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'fr-button',
-  styleUrl: 'fr-button.css',
+  styleUrl: 'fr-button.scss',
   shadow: true,
 })
 export class FrButton {
@@ -15,7 +15,7 @@ export class FrButton {
   render() {
     return (
       <Host>
-        <button>{this.text}</button>
+        <button class="button">{this.text}</button>
       </Host>
     );
   }
