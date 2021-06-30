@@ -19,7 +19,8 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "lint": "eslint src/**/*{.ts,.tsx}"
   },
   "dependencies": {
     "@stencil/core": "^2.0.1",
@@ -27,5 +28,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@stencil/eslint-plugin": "^0.3.1",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.24.0"
   }
 }
