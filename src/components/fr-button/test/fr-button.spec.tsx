@@ -5,12 +5,12 @@ describe('fr-button', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [FrButton],
-      html: `<fr-button></fr-button>`,
+      html: `<fr-button text="button-text"></fr-button>`,
     });
     expect(page.root).toEqualHtml(`
-      <fr-button>
+      <fr-button text="button-text">
         <mock:shadow-root>
-          <slot></slot>
+          <button class="button">button-text</button>
         </mock:shadow-root>
       </fr-button>
     `);
