@@ -1,0 +1,7 @@
+{
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  /* TODO: Specify react version */
+  "extends": ["plugin:@stencil/recommended"]
+}
