@@ -1,39 +1,10 @@
-name: Upgrade version and pack components
+name: Pack components
 
 on:
-  push:
-    branches-ignore:
-      - main
+  pull_request:
+    types: [ closed ]
 
 jobs:
-  auto_upgrade_version:
-    name: Bump version
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v2
-        with:
-          ref:  ${{ github.ref }}
-      - name: cat package.json
-        run: cat ./package.json
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Automated Version Bump
-        uses: phips28/gh-action-bump-version@master
-        with:
-          tag-prefix: ''
-          commit-message: 'CI: bumps version to {{version}} [skip ci]'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: cat package.json
-        run: cat ./package.json
 
   pack:
     name: Pack npm
