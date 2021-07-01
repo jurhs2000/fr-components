@@ -1,8 +1,9 @@
 name: Upgrade version and pack components
 
 on:
-  pull_request:
-    types: [closed]
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   auto_upgrade_version:
